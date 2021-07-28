@@ -50,8 +50,7 @@ app.post('/', (req, res) => {
       const weatherData = JSON.parse(data);
       const location = weatherData.timezone;
 
-      // current data
-      const currentDate = new Date(weatherData.current.dt * 1000).toLocaleDateString("zh-cn");
+      // Current data
       const currentTemperature = weatherData.current.temp;
       const feelsLike = weatherData.current.feels_like;
       const currentWeather = weatherData.current.weather[0].main.toUpperCase();
@@ -61,10 +60,10 @@ app.post('/', (req, res) => {
       // Daily data
       const operation = weatherData.daily.map(item => {
         array.push({
+          // item.dt是一串奇怪的ID数字，看了API的介绍google了下用以下方式转为中式的日期计数>>年/月/日
           "Date": new Date(item.dt * 1000).toLocaleDateString("zh-cn"),
           "DailyTemperature": item.temp.day + "℃",
           "NightTemperature": item.temp.night + "℃",
-          "Weather": item.weather[0].main,
           "Description": item.weather[0].description,
           "Icon": "http://openweathermap.org/img/wn/" + item.weather[0].icon + "@2x.png",
           "Humidity": item.humidity,
@@ -72,9 +71,9 @@ app.post('/', (req, res) => {
         });
       });
 
+// 以下time是获取的现在计算机上显示的时间
       var today = new Date();
       var time = today.getHours()+':'+today.getMinutes();
-
       console.log(time);
 
       // response user back with the parsed data
@@ -92,23 +91,18 @@ app.post('/', (req, res) => {
         </head>
 
         <body>
-
         <h1><img id="location-icon" src="/icon/icon.png" alt="location icon"></img>${location}</h1>
         <h2>${time}<span>xx</span> ${currentWeather}<img id="current-icon" src=${iconURL} alt="weather icon"></img></h2>
         <br>
         <h3>TEMP:  ${currentTemperature}℃</h5>
         <br>
         <h3>FEEL:  ${feelsLike}℃</h5>
-
-
-
-
         <br>
         <br>
 
         <div class="container">
-          <div class="row">
-        `;
+          <div class="row">`;
+      // 上面最后这两行是下面for loop中html的开头
 
       for (i = 0; i < 8; i++) {
         html += `<br>
@@ -122,10 +116,10 @@ app.post('/', (req, res) => {
                  <p>Humidity: ${array[i].Humidity}</p>
                  <p>UVI: ${array[i].UVI}</p>
                  <br>
-        </div>
-
-       `;
+        </div> `;
       }
+
+      // 给html加上结尾
       html += `</div>
                </div>
                </body>`;
@@ -136,9 +130,6 @@ app.post('/', (req, res) => {
 
   });
 });
-
-
-
 
 
 app.listen(3000, () => {
