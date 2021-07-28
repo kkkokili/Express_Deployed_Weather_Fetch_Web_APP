@@ -1,0 +1,25 @@
+body {
+  background-image: url('/background/background.jpg');
+  background-size: auto;
+  background-position: center;
+  text-align: center;
+}
+
+.container {
+  margin-top: 4%;
+}
+
+.input {
+  position: relative;
+  left: 33%;
+  margin-bottom: 3%;
+}
+
+h1 {
+    letter-spacing: 2rem;
+    font-family: 'Cookie', cursive;
+    margin-top: 14%;
+    color: #3A6351;
+    font-weight: 400;
+    font-size: 4rem;
+}
