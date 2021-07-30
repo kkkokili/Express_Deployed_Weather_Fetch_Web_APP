@@ -133,6 +133,6 @@ app.post('/', (req, res) => {
 });
 
 
-app.listen(process.env.Port|| 3000, () => {
+app.listen(process.env.PORT|| 3000, () => {
   console.log('Port 3000 starts to listen!');
 });
