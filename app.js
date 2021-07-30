@@ -1,4 +1,5 @@
 // jshint esversion:8
+// import {Weather_API_KEY} from "apikey.js";
 const express = require('express');
 const app = express();
 
@@ -132,6 +133,6 @@ app.post('/', (req, res) => {
 });
 
 
-app.listen(3000, () => {
+app.listen(process.env.Port|| 3000, () => {
   console.log('Port 3000 starts to listen!');
 });
