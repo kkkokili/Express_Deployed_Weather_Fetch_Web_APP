@@ -23,3 +23,18 @@ h1 {
     font-weight: 400;
     font-size: 4rem;
 }
+
+p {
+  position: relative;
+  right: 8px;
+  margin: 10rem;
+  color: grey!important;
+  font-family: 'Cookie', cursive;
+  letter-spacing: 0.2rem;
+  font-size: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: #693C72;
+}
