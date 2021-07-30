@@ -10,7 +10,7 @@
 #### It covers the topic of **_HTML, CSS, Bootstrap, Js, Node.js and  Express**<br/><br/>
 
 ## HOW DOES IT WORK:
-#### The project is deployed by Node.js and hosted on Heroku.  The repo contains the backend file: app. js which I run through by nodemon (a package installed through npm: node package manager) to simplify the node.js restart procedures in terminal. <br/><br/> 
+#### The project is deployed by Node.js and hosted on Heroku.  The repo contains the backend file: app. js which I tested locally by running it through by nodemon (a package installed through npm: node package manager) to simplify the node.js restart procedures in terminal. <br/><br/> 
 
 ## Display:<br/>
 
