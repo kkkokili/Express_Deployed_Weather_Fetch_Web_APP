@@ -37,9 +37,9 @@ app.get('/icon/icon.png', (req, res) => {
 
 app.post('/', (req, res) => {
   // user input the latitude
-  const lat = req.body.lat;
+  const lat = Number(req.body.lat);
   // user input the longitude
-  const lon = req.body.lon;
+  const lon = Number(req.body.lon);
   // The weather API URL
   const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,alerts,hourly&units=metric&appid=ee3e9c644e57471a2bb4752f4dcca3bf`;
 
