@@ -1,5 +1,5 @@
 // jshint esversion:8
-// import {Weather_API_KEY} from "apikey.js";
+import {Weather_API_KEY} from "apikey.js";
 const express = require('express');
 const app = express();
 
@@ -40,7 +40,7 @@ app.post('/', (req, res) => {
   // user input the longitude
   const lon = Number(req.body.lon);
   // The weather API URL
-  const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,alerts,hourly&units=metric&appid=ee3e9c644e57471a2bb4752f4dcca3bf`;
+  const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,alerts,hourly&units=metric&appid=${Weather_API_KEY}`;
 
   https.get(url, (response) => {
     console.log(response.statusCode);
