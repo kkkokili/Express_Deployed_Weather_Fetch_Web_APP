@@ -7,9 +7,6 @@ const app = express();
 // from external serval through API
 const https = require('https');
 
-// global variable array used to store daily data item in line x
-var array = [];
-
 // 出现一个bug, ***urlencoded打成了urlendcoded
 app.use(express.urlencoded({
   entended: true
@@ -36,6 +33,8 @@ app.get('/icon/icon.png', (req, res) => {
 });
 
 app.post('/', (req, res) => {
+  // global variable array used to store daily data item in line x
+  var array = [];
   // user input the latitude
   const lat = Number(req.body.lat);
   // user input the longitude
